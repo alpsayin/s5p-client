@@ -62,7 +62,7 @@ const ResponsiveHistogram = withParentSize(({ parentWidth, parentHeight, ...rest
 ));
 
 const IS_DEV = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development');
-const API_ADDRESS = IS_DEV?"https://skybase.novit.ai/data":"https://skybase.novit.ai/data"
+const API_ADDRESS = IS_DEV?"http://127.0.0.1:8080/data":"http://127.0.0.1:8080/data"
 
 
 const HIST_COLORS = {2019:'#5B5085D0', 2020:'#EA5959D0'}
