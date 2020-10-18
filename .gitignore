@@ -1,0 +1,4 @@
+.vscode*
+pyenv
+__pycache__*
+data/*
