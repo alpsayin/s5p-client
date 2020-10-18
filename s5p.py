@@ -25,7 +25,7 @@ import sys
 from s5p_cities import cities
 import random
 
-
+GEOJSON_AREA_MATCH_CONDITION = 'Contains'  # another alternative is 'Intersects
 TURKEY_LATLON_BOUNDS = [35.9025, 42.02683, 25.90902, 44.5742]
 USE_NONGUI_BACKEND = True
 
@@ -319,7 +319,7 @@ class S5PSession(object):
         date_to_str = date_to.isoformat(timespec='milliseconds')
         bounds = bounds if bounds else cities[city]
         lat1, lat2, lon1, lon2 = bounds
-        filter_params = {'footprint': f'"Contains(POLYGON(( {lon1} {lat1}, {lon2} {lat1}, {lon2} {lat2}, {lon1} {lat2}, {lon1} {lat1})))"',
+        filter_params = {'footprint': f'"{GEOJSON_AREA_MATCH_CONDITION}(POLYGON(( {lon1} {lat1}, {lon2} {lat1}, {lon2} {lat2}, {lon1} {lat2}, {lon1} {lat1})))"',
                          'beginPosition': f'[{date_from_str}Z TO {date_to_str}Z ]',
                          'endPosition': f'[{date_from_str}Z TO {date_to_str}Z ]',
                          'platformname': 'Sentinel-5',
