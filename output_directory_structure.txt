@@ -1,0 +1,132 @@
+/home/alpsayin/s5p-data/
+├── data
+│   ├── ankara
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── ankara_avg10.json
+│   │   │       ├── ankara_interpd.json
+│   │   │       └── ankara.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── barcelona
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── barcelona_avg10.json
+│   │   │       ├── barcelona_interpd.json
+│   │   │       └── barcelona.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── cities.json
+│   ├── hong kong
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── hong kong_avg10.json
+│   │   │       ├── hong kong_interpd.json
+│   │   │       └── hong kong.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── istanbul
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── istanbul_avg10.json
+│   │   │       ├── istanbul_interpd.json
+│   │   │       └── istanbul.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── kiev
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── kiev_avg10.json
+│   │   │       ├── kiev_interpd.json
+│   │   │       └── kiev.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── london
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── london_avg10.json
+│   │   │       ├── london_interpd.json
+│   │   │       └── london.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── milan
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── milan_avg10.json
+│   │   │       ├── milan_interpd.json
+│   │   │       └── milan.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── minsk
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── minsk_avg10.json
+│   │   │       ├── minsk_interpd.json
+│   │   │       └── minsk.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── moscow
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── moscow_avg10.json
+│   │   │       ├── moscow_interpd.json
+│   │   │       └── moscow.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── paris
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── paris_avg10.json
+│   │   │       ├── paris_interpd.json
+│   │   │       └── paris.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── seoul
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── seoul_avg10.json
+│   │   │       ├── seoul_interpd.json
+│   │   │       └── seoul.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── stockholm
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── stockholm_avg10.json
+│   │   │       ├── stockholm_interpd.json
+│   │   │       └── stockholm.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   ├── tokyo
+│   │   ├── NO2
+│   │   │   └── 2020-10-18
+│   │   │       ├── tokyo_avg10.json
+│   │   │       ├── tokyo_interpd.json
+│   │   │       └── tokyo.json
+│   │   ├── summary_avg10.json
+│   │   ├── summary_interpd.json
+│   │   └── summary.json
+│   └── wuhan
+│       ├── NO2
+│       │   └── 2020-10-18
+│       │       ├── wuhan_avg10.json
+│       │       ├── wuhan_interpd.json
+│       │       └── wuhan.json
+│       ├── summary_avg10.json
+│       ├── summary_interpd.json
+│       └── summary.json
+└── excluded.txt
+
+43 directories, 86 files
