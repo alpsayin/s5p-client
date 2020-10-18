@@ -22,5 +22,11 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
-npm install -g http-server
-http-server --cors -p 8080 $HOME/s5p-data
+source pyenv/bin/activate 
+if which http-server ; then
+    echo "http-server is installed already"
+else
+    npm install -g http-server
+fi; 
+http-server --cors -p 8081 $HOME/s5p-data &
+pyenv/bin/python web_app.py &
