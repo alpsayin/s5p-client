@@ -1,0 +1,553 @@
+
+html, body {
+  /*background: url(./img/gray_satimg.jpg) bottom center no-repeat;*/
+  background-color: #fff;
+  background-size: cover;
+  color: black;
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+}
+
+input{
+    text-align: center;
+}
+
+.datepickerholder {
+  /*overflow: hidden;*/
+  margin-top: 8px;
+  text-align: center;
+}
+
+.nextprevyearbutton{
+  margin: 3px;
+  margin-top: 8px;
+}
+
+.cityselector {
+
+}
+
+.datepicker-class {
+  width: 90px;
+  /*border-radius: 3px;*/
+  height: 30px;
+}
+
+.datepicker-class-2019 {
+  border: 2px solid #5B5085;
+  color: #5B5085;
+  /*background: #5B5085D0;*/
+}
+
+.datepicker-class-2020 {
+  border: 2px solid #EA5959;
+  color: #EA5959;
+  /*background: #EA5959D0;*/
+}
+
+.popper-class {
+  z-index: 1001 !important;
+}
+
+.mygallery {
+  margin-top: 10px;
+  width: auto;
+  margin-left: -10px;
+  /*margin-right: -20px;*/
+  /*height: 50%;*/
+}
+
+.darkrow {
+  background-color: #fff;
+}
+
+.presets {
+  background-color: #fff;
+  margin-left: -10px;
+  /*margin-right*/: -20px;
+  margin-bottom: -10px;
+}
+
+.histoslider {
+  margin-top: 10px;
+  /*width: 100%;*/
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+  margin-left: -10px !important;
+  /*padding-bottom: -20px;*/
+}
+
+.histoslider:hover .datehandle0 {
+    display: block;
+    color: black;
+}
+.histoslider:hover .datehandle1 {
+    display: block;
+    color: black;
+}
+
+.daypickercontainer {
+  height: 265px;
+}
+
+.datenavbuttonscontainer {
+  margin-top: 15px;
+}
+
+.novitcontainer {
+  margin-top: 15px;
+  margin-bottom: 3px;
+  margin-right: 35%;
+  margin-left: 35%;
+}
+
+.contact {
+  font-size: 10px;
+}
+
+.signouticon {
+   margin-bottom: 2px;
+   font-size: 10px;
+}
+
+.signout {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.signout:hover .signouttext {
+  width: 150px;
+  display: contents;
+}
+
+.signouttext {
+  width: 0px;
+  display: none;
+}
+
+.adsholder {
+  position: fixed;
+  top: 15px;
+  left: 45px;
+  z-index: 999;
+  display: none;
+}
+
+.adsblock {
+  margin: 8px;
+  height: 60px;
+  width: 320px;
+  display: block;
+  background: #C7C7C7;
+  opacity: 65%;
+  text-align: center;
+}
+
+.novitholder {
+  position: fixed;
+  top: 0px;
+  right: 25px;
+  z-index: 999;
+  display: block;
+}
+
+.novitblock {
+  padding: 5px;
+  margin: 15px;
+  height: 40px;
+  width: 160px;
+  display: block;
+  background: #ffffff;
+  text-align: center;
+}
+
+.paletteholder {
+  position: sticky;
+  top: 130px;
+  left: 7px;
+  z-index: 999;
+  display: block;
+}
+
+.paletteblock {
+  border-radius: 3px;
+  padding: 5px;
+  margin: 10px;
+  height: 100px;
+  width: 20px;
+  display: block;
+  /*background: #ffffff;*/
+  opacity: 0.65;
+  text-align: center;
+}
+
+.maxblock {
+  position: absolute;
+  margin-left: 8px;
+  margin-top: -4px;
+  background: transparent;
+  text-align: center;
+  width:70px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.minblock {
+  position: absolute;
+  margin-left: 8px;
+  margin-top: 86px;
+  background: transparent;
+  text-align: center;
+  width:70px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.unitblock {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 100px;
+  background: transparent;
+  text-align: center;
+  width:70px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.feedbackicon {
+   margin-bottom: 2px;
+   font-size: 10px;
+}
+
+.feedback {
+  position: fixed;
+  top: 30px;
+  right: 0px;
+  z-index: 1000;
+}
+
+.feedback:hover .feedbacktext {
+  width: 150px;
+  display: contents;
+}
+
+.feedbackurl {
+  color: white;
+}
+
+.feedbacktext {
+  width: 0px;
+  display: none;
+}
+
+.feedbacklink {
+  color: white;
+}
+
+.iconclass {
+   margin-bottom: 2px;
+   font-size: 16px;
+}
+
+.datehandle0 { 
+  font-size: 12px;
+  color: black;
+  width:  60px;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: 18px;
+  /*margin-right: -10px;*/
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  border: 1px solid #2f2f2f;
+  position: relative;
+  bottom: 13px;
+  right: 5px;
+  display: none
+}
+
+.datehandle1 { 
+  font-size: 12px;
+  color: black;
+  width:  60px;
+  height: 20px;
+  margin-top: 0px;
+  margin-left: 18px;
+  /*margin-right: -10px;*/
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  border: 1px solid #2f2f2f;
+  position: relative;
+  top: 35px;
+  right: 70px;
+  display: none
+}
+
+.slider {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+  display: grid;
+  margin-right: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+}
+
+
+.histogram {
+  width: 100%;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+}
+
+.content {
+  margin: auto;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  width: 100%;
+  height: auto;
+  background-color: #f8f8f8;
+  padding: 4px;
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+}
+
+
+.tablecontent {
+  width: 100%;
+  overflow-y: auto;
+  height: 22vh;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+  font-size: 12px;
+  padding: 4px;
+  margin: 5px;
+  padding: 5px;
+  padding-right: 15px;
+}
+
+.totalrow {
+  /*font-weight: bold;*/
+  font-style: italic;
+}
+
+.form-container {
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  height: 250px;
+  background-color: #f8f8f8;
+  padding: 4px;
+  border-radius: 3px;
+  text-align: center;
+  align-content: center;
+}
+
+.rightcol {
+  display: block;
+  height: calc(100vh -15px);
+  bottom: 0px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+
+.mapclass {
+  height: calc(100vh - 275px);
+   width: 100%;
+}
+
+.wait {
+  cursor: wait !important;
+}
+
+.tooltipbutton:hover span{
+  /*color: blue;*/
+  text-decoration: underline; 
+
+}.tooltipbutton:hover{
+  cursor: alias !important;
+}
+
+.latlonspan {
+    font-style: italic;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.latloncode {
+  color: #676767;
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+
+.plotbutton {
+  margin: 5px;
+  padding-right: 8px;
+  text-align: left;
+}
+
+.legend {
+  position: absolute;
+  bottom: 90px;
+  z-index: 11999px;
+  padding: 2px;
+  padding-right: 5px;
+  margin: 5px;
+  margin-top: 8px;
+  margin-bottom: 1px;
+  font-weight: bold;
+  text-align: left;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.diffplotbuttonicon {
+  color: red; 
+  margin: 5px;
+  margin-bottom: 8px;
+
+}
+
+.histplotbuttonicon {
+  color: gray; 
+  margin: 5px;
+  margin-bottom: 8px;
+
+}
+
+.histtypebuttonicon {
+  color: #00707C; 
+  margin: 5px;
+  margin-bottom: 8px;
+
+}
+
+.plotbuttontext {
+  font-size: 12px;
+}
+
+
+.expertdropdownbutton {
+  margin: 5px;
+  padding-right: 8px;
+  width: 90px;
+  text-align: center;
+}
+
+.histtypedropdownbutton {
+  margin: 5px;
+  padding-right: 8px;
+  width: 115px;
+  text-align: center;
+}
+
+.diffbutton {
+  margin: 5px;
+  padding-right: 8px;
+  text-align: left;
+}
+
+.presetbuttonsdiv{
+  /*min-width: 340px;*/
+}
+
+.plotbuttonsdiv{
+  /*min-width: 300px;*/
+  /*margin-left: 100px;*/
+}
+
+.norasterexists{
+  font-weight: bold;
+}
+
+label {
+  color: #333;
+}
+
+#result {
+  color: #000;
+}
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+      opacity: .2;
+    }
+}
+
+.loading span {
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.loading span:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.loading span:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
+}

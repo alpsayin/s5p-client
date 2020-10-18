@@ -1,0 +1,48 @@
+{
+  "name": "skybase-demo",
+  "homepage": "https://skybase.novit.ai",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@data-ui/histogram": "0.0.84",
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.3.1",
+    "core-js": "^2.6.5",
+    "d3-time-format": "^2.1.3",
+    "leaflet": "^1.5.1",
+    "leaflet-heatmap": "^1.0.0",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-compound-slider": "^2.3.0",
+    "react-cookie-consent": "^3.0.0",
+    "react-datepicker": "^2.14.1",
+    "react-dom": "^16.9.0",
+    "react-icons": "^3.7.0",
+    "react-leaflet": "^2.4.0",
+    "react-leaflet-search": "^0.6.0",
+    "react-scripts": "^3.3.0",
+    "react-select-search": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
