@@ -43,6 +43,8 @@ source run_ui.bash
 ```
 Then head to [http://localhost:8080/](http://localhost:8080/).
 
+![screenshot](screenshot.jpg "what it should look like")
+
 ### S5P Query & Download Tool Usage
 s5p.py client comes with a couple of main modes query and download. 
  - Query mode allows downloading of search results with certain flags. 
