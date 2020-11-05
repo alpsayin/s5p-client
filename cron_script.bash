@@ -34,7 +34,8 @@ else
 fi
 mkdir -p "$HOME/s5p-data/data"
 mkdir -p "/tmp/s5p-data/data"
-pyenv/bin/python3 s5p.py populate -df $curday -dt $curday -d -j -tf /tmp/s5p-data/data/ -r 20 -ap 5
+# pyenv/bin/python3 s5p.py populate -df $curday -dt $curday -d -j -tf /tmp/s5p-data/data/ -r 20 -ap 5 # will download all predefined cities
+pyenv/bin/python3 s5p.py populate -df $curday -dt $curday -d -j -tf /tmp/s5p-data/data/ -r 20 -ap 5 -c milan -c barcelona -c paris
 touch -a "$HOME/s5p-data/excluded.txt"
 rsync -va --exclude='*.nc' --exclude-from "$HOME/s5p-data/excluded.txt" --info="progress2" /tmp/s5p-data/data $HOME/s5p-data/
 pyenv/bin/python3 s5p_summary_generator.py -tf $HOME/s5p-data/data/
