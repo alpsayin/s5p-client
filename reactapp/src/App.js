@@ -367,18 +367,6 @@ class App extends Component {
       	this.getSummary()
     }
 
-    // Auth.currentAuthenticatedUser({
-    //     bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-    // }).then(user => s('CognitoUser',user))
-    // .catch(err => console.log(err));
-
-
-    // console.log("authState",this.props.authState)
-
-    // Auth.currentSession()
-    //     .then(data => console.log('CognitoUserSession',data))
-    //     .catch(err => console.log(err));
-
     document.addEventListener('keyup', this.appKeyUpHandler);
     // console.log(data)
     // console.log(geodata)
