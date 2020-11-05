@@ -850,12 +850,14 @@ Mega Quick start:
 
 Quick start:
     Query only:
-        python s5p.py query -b lat1 lat2 lon1 lon2 -pt CO -pm Offline
-    Query and download latest product:
-        python s5p.py query -b {lat1} {lat2} {lon1} {lon2} -pt CO -pm Offline -rl 1 -d -tf /tmp/s5p/
+        python s5p.py query -c milan -pt NO2 -pm NRT
 
-    Download product with uuid:
-        python s5p.py download {uuid} -tf /tmp/s5p/
+    Query and download latest product:
+        python s5p.py query -c milan -pt NO2 -pm NRT -rl 1 -d -tf /tmp/s5p/
+
+    Query and Download data for a range of dates for a set of cities:
+        python s5p.py populate -df 2020-11-01 -dt 2020-11-05 -pt NO2 -c milan -c barcelona -c paris -g -j -d
+
 ''')
     subparsers = parser.add_subparsers(required=True, description='Modes: "query" or "download"', help='Use "query", "search" or "lookup" to make a search. Use "download", "pull" or "get" to initiate a download.', dest='mode')
     query_mode = subparsers.add_parser('query', aliases=['search', 'lookup'])
