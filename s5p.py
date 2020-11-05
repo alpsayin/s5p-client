@@ -759,9 +759,7 @@ def populate_submain(s5p_session, filtered_vargs):
     curday = date_to
 
     def nrt_data_should_exist(dt: datetime) -> bool:
-        return dt.month == datetime.utcnow().month
-        # experimental;
-        # return dt > datetime.utcnow()-timedelta(hours=200)  # 165 published but using 200 to be on the safe side
+        return dt > datetime.utcnow()-timedelta(hours=200)  # 165 published but using 200 to be on the safe side
 
     def safe_dump_cities_to_json_or_stdout():
         try:
