@@ -1,13 +1,11 @@
 # s5p-client
 ### Another Sentinel-5 Precursor data query and downloader tool
-
 This tool is written to automate data download, conversion and aggregation for a daily NO2 levels visualisation project.
 
-User guide is coming...
-
 ### Acknowledgements
+I wrote this tool while working at Novit.AI for https://emissions.novit.ai project. I'm releasing the source under my management with Novit's permission. 
 
-I wrote this tool while working at Novit.AI for https://emissions.novit.ai project. I'm releasing the source under my management with Novit's permission. I would also like to acknowledge and thank the ESA (European Spatial Agency) for the access to the Sentinel 5P Hub.
+I would also like to acknowledge and thank the ESA (European Spatial Agency) for the access to the Sentinel 5P Hub.
 
 ### Advantages & Disadvantages of this tool
 1. Input areas are lat,lon bboxes in the format of minlat, maxlat, minlon, maxlon. While this makes it a breeze to quickly query some areas, if you need to work with more complex geojson defined areas see below.
@@ -19,113 +17,131 @@ For all purposes that require a bit more official touch; you should probably use
 https://github.com/bilelomrani1/s5p-tools
 
 ### Installation 
+##### Requirements
+I'd say you need a Linux, at least a unix-like system. Confirmed working on arch and debian.
 
+##### S5P Client
+It's highly suggested to use a virtualenv.
 ```bash
 pip install -r requirements.txt
 # Cartopy needs to be installed after numpy is installed because it's build wheel needs it
 pip install Cartopy==0.18.0  
 python3 s5p.py --help
 ```
-
-### Usage
-
-s5p.py client comes with 2 main modes query and download. Query mode also allows downloading of search results with certain flags. Download mode is just used to download products with their uuids and not very useful on its own. The 2 most important command you'll most likely need are given in Quick Start.
-
-```usage: s5p.py [-h] {query,search,lookup,download,get,pull,test,alp,populate,fill} ...
-
-S5P Query and Download Tool
-Mega Quick start:
-    python s5p.py query
-
-Quick start:
-    Query only:
-        python s5p.py query -b lat1 lat2 lon1 lon2 -pt CO -pm Offline
-    Query and download latest product:
-        python s5p.py query -b {lat1} {lat2} {lon1} {lon2} -pt CO -pm Offline -rl 1 -d -tf /tmp/s5p/
-
-    Download product with uuid:
-        python s5p.py download {uuid} -tf /tmp/s5p/
-
-optional arguments:
-  -h, --help            show this help message and exit
-
-subcommands:
-  Modes: "query" or "download"
-
-  {query,search,lookup,download,get,pull,test,alp,populate,fill}
-                        Use "query", "search" or "lookup" to make a search. Use "download", "pull" or "get" to initiate a download.
-
+##### Web UI
+```
+cd reactapp
+npm install
+npm run build
 ```
 
-## Query Mode
-Chances are this is the mode you'll use most to both query and automatically download products and convert those products into more friendly jsons.
-
-Cities are defined in a *s5p_cities.py*. If there's an area you'll likely query a lot, I suggest you fork the repo and add in your own cities.
-
+### React App (Web UI) Quick Start:
+Assuming you installed the client and built the app as instructed just above:
+```bash
+cp -Rf sample-s5p-data $HOME/s5p-data
+source run_ui.bash
 ```
-usage: s5p.py query [-h] [-v] [-u USERNAME] [-p PASSWORD] (-b BOUNDS BOUNDS BOUNDS BOUNDS | -c CITY) [-df DATE_FROM] [-dt DATE_TO] [-pt PRODUCT_TYPE] [-pm PROCESSING_MODE] [-ro OFFSET]
-                    [-rl LIMIT] [-d] [-f] [-rp REFRESH_PERIOD] [-ap ABORT_PERIOD] [-tf OUTPUT_FOLDER] [-o OUTPUT_FILENAME] [-g] [-j] [-r RETRIES]
+Then head to [http://localhost:8080/](http://localhost:8080/).
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -v, --verbose         This will enable outputting all sorts of information including pycurl outputs
-  -u USERNAME, --username USERNAME
-                        S5P username; default is s5pguest
-  -p PASSWORD, --password PASSWORD
-                        S5P password; default is s5pguest
-  -b BOUNDS BOUNDS BOUNDS BOUNDS, --bounds BOUNDS BOUNDS BOUNDS BOUNDS
-                        Bounds as space-separated 4 numbers in lat1, lat2, lon1, lon2 format
-  -c CITY, --city CITY  Major city name as string
-  -df DATE_FROM, --date-from DATE_FROM
-                        This filter includes the date you enter
-  -dt DATE_TO, --date-to DATE_TO
-                        This filter includes the date you enter
-  -pt PRODUCT_TYPE, --product-type PRODUCT_TYPE
-                        AER_AI, AER_LH, NO2, CO, CH4, SO2, HCHO, O3, O3_TCL, CLOUD
-  -pm PROCESSING_MODE, --processing-mode PROCESSING_MODE
-                        NRT, OFFLINE, RPRO
-  -ro OFFSET, --offset OFFSET
-                        Default:0; Offset for fetching results. This is about pagination but using a limit will speed up
-  -rl LIMIT, --limit LIMIT
-                        Default:25;Limit for fetching results. This is mostly about pagination but using a limit will speed up
-  -d, --download        Download the latest result from query. Implies -rl=1 -ro=0
-  -f, --force-overwrite
-                        Download even if the target file exists
-  -rp REFRESH_PERIOD, --refresh-period REFRESH_PERIOD
-                        Progress update refresh period. Default is 0.5s. Set this high when using in notebook.
-  -ap ABORT_PERIOD, --abort-period ABORT_PERIOD
-                        Abort timeout time for interrupting a download if no data has been received. Default is 30 seconds.
-  -tf OUTPUT_FOLDER, -of OUTPUT_FOLDER, --target-folder OUTPUT_FOLDER, --output-folder OUTPUT_FOLDER
-                        Output file directory for downloads
-  -o OUTPUT_FILENAME, --output OUTPUT_FILENAME
-                        Forces output file name for downloads. Note this isnt a Path but a str
-  -g, --geojson, --generate-geojson
-                        Convert the downloaded netcdf file to a geojson.
-  -j, --json, --generate-json
-                        Convert the downloaded netcdf file to a json.
-  -r RETRIES, --retries RETRIES
-                        Max retries for downloading a product
+### S5P Query & Download Tool Usage
+s5p.py client comes with a couple of main modes query and download. 
+ - Query mode allows downloading of search results with certain flags. 
+ - Download mode is just used to download products with their uuids and not very useful on its own. 
+ - Populate mode is an extension of query mode for a range of dates.
+The 3 most important command you'll most likely need are given in Quick Start.
+
+#### Quick start:
+*Query only:*
+```bash
+python s5p.py query -c milan -pt NO2 -pm NRT
+```
+*Query and download latest product and convert the netcdf file to geojson and json:*
+```bash
+python s5p.py query -c milan -pt NO2 -pm NRT -rl 1 -d -g -j -tf /tmp/s5p-data/
+```
+*Do the above for a range of dates for a set of cities:*
+```bash
+python s5p.py populate -df 2020-11-01 -dt 2020-11-05 -pt NO2 -c milan -c barcelona -c paris -g -j -d
 ```
 
-## Download Mode
-Download mode only accepts a product uuid and not very useful on its own. It's useful if you want to separate your querying and downloading processes.
+##### Query Mode
+Chances are this is the mode you'll use most to both query and automatically download products and convert those products into more friendly jsons. Download flag picks the first product on the results from query for downloading.
+
+You can use arbitrary latlon bboxes but you can also use predefined cities. Cities are defined in a *s5p_cities.py*. If there's an area you'll likely query a lot, I suggest you fork the repo and add in your own cities.
+
+Type in `python3 s5p.py query -h ` to get all available options.
+
+##### Populate Mode
+Populate mode is an automated version of download mode for a given range of dates. It's practically an extension to query mode's download flag to query and download the first pick on a range of searches.
+
+Type in `python3 s5p.py populate -h ` to get all available options.
+
+### S5P Summary Generator
+S5P data is usually has missing spots or not very reliable on a single measurement. `s5p_summary_generator.py` will take in json files and average them out in the span of a given number of days. And it will even generate summaries for each city too. 
+
+For it to work your data must be structured in accordance to `output_directory_structure.txt` *(more on this later)*.
+
+Type in `python3 s5p_summary_generator.py -h ` to get all available options.
+
+### Automation
+All this downloading, averaging and summarisation is a lot of automatisable work. A bash script is provided to be called from cron unsurprisingly called `cron_script.bash`. Of course you may need to dig in and change a few parameters like product type, target folders, the path to python executable etc.
+
+The script is also quite useful on its own too and can be called with a date parameter. You can use this script to use much less parameters to download data for a predefined city by only giving it a date parameter in the form of YYYY-MM-DD.
+```bash
+./cron_script.bash 2020-11-01
 ```
-usage: s5p.py download [-h] [-v] [-tf OUTPUT_FOLDER] [-o OUTPUT_FILENAME] uuid
+1. This will create an `s5p-data` folder in `/tmp` directory and structure it in accordance with `required_download_structure.txt`. 
+1. Then it will call `s5p_summary_generator.py` on this folder to generate ready-to-serve jsons in acoordance with `output_directory_structure.txt` in the caller's home directory under `s5p-data` folder.
+1. This will then be ready to be served with the reactapp provided as below.
+```bash
+source run_ui.bash  # sourced so that we can then fg to kill spawned processes
+```
+This starts two http servers; one `http-server` instance which requires npm. 
+The other is a simple python web server defined in `web_app.py`. This script is merely a demo and there are definitely better ways to serve both the data and the react app.
 
-positional arguments:
-  uuid                  Logs in and downloads the specified uuid
+Webapp is served on [http://localhost:8080](http://localhost:8080) .
+Json Data is served on http://localhost:8081 .
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -v, --verbose         This will enable outputting all sorts of information including pycurl outputs
-  -tf OUTPUT_FOLDER, -of OUTPUT_FOLDER, --target-folder OUTPUT_FOLDER, --output-folder OUTPUT_FOLDER
-                        Output file directory for downloads
-  -o OUTPUT_FILENAME, --output OUTPUT_FILENAME
-                        Forces output file name for downloads. Note this isnt a Path but a str
+### Hosting your own version:
+```bash
+mkdir -p "$HOME/s5p-data/data"
+mkdir -p "/tmp/s5p-data/data"
+python3 s5p.py populate -df 2020-11-01 -dt $(date +%Y-%m-%d) -pt NO2 -j -d
+# wait for it to finish; this will take some time
+touch -a "$HOME/s5p-data/excluded.txt"
+rsync -va --exclude='*.nc' --exclude-from "$HOME/s5p-data/excluded.txt" --info="progress2" /tmp/s5p-data/data $HOME/s5p-data/
+python3 s5p_summary_generator.py -tf $HOME/s5p-data/data/
+source run_ui.bash
 ```
 
-## Test Mode
-There is also a test mode not detailed in user manuals. This is for developers to get **into** it. The `python s5p.py test` will call a `test(*args, **kwargs)` function inside the `s5p.py`. This was my main method of testing some routines.
+### Excluding bad data
+Sometimes there'll be outlier data that just doesn't seem right (i.e. saturated to a level that even a 10-day average shoots up to 100x). 
+
+You may not want to include this in your averaging process. Best way to do that is to simply remove the data associated with that data and call `s5p_summary_generator.py` again. 
+
+But to avoid re-including this data within the automation process is to add a line to `$HOME/s5p-data/excluded.txt` mentioned above so it's not rsynced again from temp folder to data hosting folder. 
+
+Refer to `rsync`'s man pages' `--exclude-from` section ([https://linux.die.net/man/1/rsync](https://linux.die.net/man/1/rsync)).
+
+### Extras 
+
+##### S5P Averager
+S5P summary generator uses the algorithms defined in this script to take a running average of the data. This is an implementation file and even though you can run it, it's mostly for test purposes.
+
+Type in `python3 s5p_averager.py -h ` to get all available options.
+
+##### Web_app.py
+There is a reason a custom python based web server is used. The webapp can navigate to certain cities by looking at the URL. However, for this to work the backend server needs to not send 404 responses but serve the index.html as usual. 
+
+Try this by typing [http://localhost:8080/paris](http://localhost:8080/paris) or [http://localhost:8080/paris,milan](http://localhost:8080/paris,milan) directly into the browser.
+
+##### Download Mode
+Download mode only accepts a product uuid and not very useful on its own. It downloads products in netcdf format with uuid. It cannot tell where and when it really belongs to because it doesn't dive into the downloaded file. 
+At this point this an archaic utility and I guess It's only useful if you want to separate your querying and downloading processes.
+Type in `python3 s5p.py download -h ` to get all available options.
 
 ### License
-License is an MIT License if it's not obvious.
+License is an MIT License if it's not obvious. TL;DR afaik
+ - use as you wish
+ - i'm not responsible if something breaks
+ - an acknowledgement/reference is kindly asked and would be nice
