@@ -893,7 +893,7 @@ Quick start:
     populate_mode.add_argument('-g', '--geojson', '--generate-geojson', dest='generate_geojson', action='store_true', help='Convert the downloaded netcdf file to a geojson.')
     populate_mode.add_argument('-j', '--json', '--generate-json', dest='generate_json', action='store_true', help='Convert the downloaded netcdf file to a json.')
     populate_mode.add_argument('-r', '--retries', type=int, default=5, help='Max retries for downloading a product')
-    populate_mode.add_argument('-tf', '-of', '--target-folder', '--output-folder', '--webroot', dest='output_folder', default=Path.home()/'/s5p-data/data/', type=Path, help='Output file directory for downloads. This should be the webroot. Defaults to "$HOME/s5p-data/data/" ')
+    populate_mode.add_argument('-tf', '-of', '--target-folder', '--output-folder', '--webroot', dest='output_folder', default=Path.home()/'s5p-data/data/', type=Path, help='Output file directory for downloads. This should be the webroot. Defaults to "$HOME/s5p-data/data/" ')
     populate_mode.add_argument('-df', '--date-from', type=lambda s: datetime.strptime(s, '%Y-%m-%d'), help='This filter includes the date you enter')
     populate_mode.add_argument('-dt', '--date-to', type=lambda s: datetime.strptime(s, '%Y-%m-%d')+timedelta(days=1, seconds=-1), help='This filter includes the date you enter')
     populate_mode.add_argument('-v', '--verbose', action='store_true', help='This will enable outputting all sorts of information including pycurl outputs')
