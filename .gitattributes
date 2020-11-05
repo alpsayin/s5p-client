@@ -1,0 +1,2 @@
+# Because this is mainly a python project
+*.* linguist-language=python
