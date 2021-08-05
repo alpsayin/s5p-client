@@ -5,7 +5,7 @@ This tool is written to automate data download, conversion and aggregation for a
 ### Acknowledgements
 I wrote this tool while working at Novit.AI for https://emissions.novit.ai project. I'm releasing the source under my management with Novit's permission. 
 
-I would also like to acknowledge and thank the ESA (European Spatial Agency) for the access to the Sentinel 5P Hub.
+I would also like to acknowledge and thank the ESA (European Space Agency) for the access to the Sentinel 5P Hub.
 
 ### Advantages & Disadvantages of this tool
 1. Input areas are lat,lon bboxes in the format of minlat, maxlat, minlon, maxlon. While this makes it a breeze to quickly query some areas, if you need to work with more complex geojson defined areas see below.
